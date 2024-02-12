@@ -10,12 +10,12 @@ function startCountdown(duration, display) {
     display.textContent = seconds;
 
     if (--timer < 0) {
-      clearInterval(countdownInterval); // Stop the countdown
-      window.location.href = "/endscreen"; // Redirect to the end screen
+      clearInterval(countdownInterval); 
+      window.location.href = "/endscreen"; 
     }
   }, 1000);
 }
 
 var timerDisplay = document.getElementById('timer');
-var duration = 29; // Adjusted duration to 30 seconds
+var duration = 29; 
 startCountdown(duration, timerDisplay);
