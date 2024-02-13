@@ -17,5 +17,5 @@ function startCountdown(duration, display) {
 }
 
 var timerDisplay = document.getElementById('timer');
-var duration = 15;
+var duration = 35;
 startCountdown(duration, timerDisplay);

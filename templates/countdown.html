@@ -6,6 +6,8 @@
   <title>Countdown Timer & Pose Model</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
   <!-- Custom styles -->
   <style>
     .timer {
@@ -15,15 +17,19 @@
   </style>
 </head>
 <body>
-  <div class="container text-center">
-    <h1>Countdown Timer & Pose Model</h1>
-    <div class="timer" id="timer">30</div>
-    <div class="selector" id="selector">Item</div>
+  <div class="container text-center mt-5">
+    <h1>Do as many poses as you can!</h1>
+    <div class="timer" id="timer">36</div>
+    <p class="h1" id="selector">Item</p>
   </div>
 
-  <div>Teachable Machine Pose Model</div>
-  <div><canvas id="canvas"></canvas></div>
-  <div id="label-container"></div>
+  <div class="container mt-5">
+    <div class="text-center">
+      <canvas id="canvas"></canvas>
+    </div>
+    <div class="text-center" id="label-container"></div>
+  </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
@@ -34,7 +40,7 @@
 
 <script type="text/javascript">
     // the link to your model provided by Teachable Machine export panel
-    const URL = "https://teachablemachine.withgoogle.com/models/8OTrOycJz/";
+    const URL = "https://teachablemachine.withgoogle.com/models/9VS_te6TJ/";
     let model, webcam, ctx, labelContainer, maxPredictions;
     let counter = 0;
 
@@ -49,7 +55,7 @@
         maxPredictions = model.getTotalClasses();
 
         // Convenience function to setup a webcam
-        const size = 200;
+        const size = 400;
         const flip = true; // whether to flip the webcam
         webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam

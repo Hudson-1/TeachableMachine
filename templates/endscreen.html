@@ -9,10 +9,15 @@
 </head>
 
 <body>
-  <h1>Game Over</h1>
-<p>Here is your final score!</p>
-<br />
-{{data.score}}
+  <div class="container">
+    <h1 class="mt-5 mb-4 text-center">Game Over! Your final score is {{data.score}}</h1>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <img src="/static/end.jpg" alt="Front Image" class="img-fluid rounded mx-auto d-block" style="max-width: 100%;">
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
