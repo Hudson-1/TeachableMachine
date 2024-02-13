@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -18,7 +18,11 @@ def timer():
 
 @app.route('/endscreen')
 def endscreen():
-    return render_template("endscreen.html")
+    score = request.args.get('score')
+    props = {
+        'score':score
+    }
+    return render_template("endscreen.html",data=props)
 
 
 if __name__ == '__main__':

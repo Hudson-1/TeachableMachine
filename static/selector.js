@@ -1,11 +1,15 @@
-function selector(htmlselector) {
+function selector() {
 let ar = ['Flex', 'Sleep', 'Phone Call'];
 
-htmlselector.textContent = ar[Math.floor (Math.random() * ar.length)]
+let currentStr = ar[Math.floor (Math.random() * ar.length)]
+// htmlselector.textContent = currentStr
+let randomselector = document.getElementById('selector')
+randomselector.innerHTML = currentStr
 
-
+    return currentStr
 }
 
-let randomselector = document.getElementById('selector')
+let current = selector()
 
-selector(randomselector)
+
+// selector(randomselector)

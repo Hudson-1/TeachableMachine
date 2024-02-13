@@ -36,6 +36,7 @@
     // the link to your model provided by Teachable Machine export panel
     const URL = "https://teachablemachine.withgoogle.com/models/8OTrOycJz/";
     let model, webcam, ctx, labelContainer, maxPredictions;
+    let counter = 0;
 
     async function init() {
         const modelURL = URL + "model.json";
@@ -82,6 +83,11 @@
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
+
+            if (prediction[i].probability >= .5 && prediction[i].className === current) {
+                current = selector()
+                counter ++
+            }
         }
 
         drawPose(pose);

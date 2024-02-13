@@ -11,11 +11,11 @@ function startCountdown(duration, display) {
 
     if (--timer < 0) {
       clearInterval(countdownInterval); 
-      window.location.href = "/endscreen"; 
+      window.location.href = "/endscreen?score=" + counter;
     }
   }, 1000);
 }
 
 var timerDisplay = document.getElementById('timer');
-var duration = 29; 
+var duration = 15;
 startCountdown(duration, timerDisplay);
